@@ -100,7 +100,31 @@ class Application extends \yii\db\ActiveRecord
         return $this->hasOne(User::class, ['id' => 'user_id']);
     }
 
-    public function checkDate(): void
+    // public function checkDate(): void
+    // {
+    //     if ($this->id) {
+    //         $res = self::find()
+    //             ->where(['time_delivery' => $this->time_delivery])
+    //             ->andWhere(['!=', 'id', $this->id])
+    //             ->count();
+
+    //         if ($res) {
+    //             $this->addError('time_delivery', 'Вы даун');
+    //         }
+    //     }
+    // }
+
+    // public function checkTime(): void
+    // {
+    //     $hour = (int)Yii::$app->formatter->asTime($this->time_delivery, 'php:H');
+    //     $minute = (int)Yii::$app->formatter->asTime($this->time_delivery, 'php:i');
+
+    //     if ($hour < 8 || $hour > 12 || !empty($minute)) {
+    //         $this->addError('time_delivery', 'мяу');
+    //     }
+    // }
+
+    public function checkDate()
     {
         if ($this->id) {
             $res = self::find()
@@ -109,18 +133,17 @@ class Application extends \yii\db\ActiveRecord
                 ->count();
 
             if ($res) {
-                $this->addError('time_delivery', 'Вы даун');
+                $this->addError('time_delivery', 'мяу');
             }
         }
     }
 
-    public function checkTime(): void
-    {
+    public function checkTime(){
         $hour = (int)Yii::$app->formatter->asTime($this->time_delivery, 'php:H');
         $minute = (int)Yii::$app->formatter->asTime($this->time_delivery, 'php:i');
 
-        if ($hour < 8 || $hour > 12 || !empty($minute)) {
-            $this->addError('time_delivery', 'мяу');
+        if($hour < 8 || $hour > 12 || !empty($minute)){
+            $this->addError('time_delivery', 'qwsdsvsdv');
         }
     }
 

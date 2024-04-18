@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'itemOptions' => ['class' => 'item'],
         'itemView' => 'item',
-        'layout' => '<div class="d-flex flex-wrap justify-content-center">{items}</div>'
+        'layout' => '<div class="layout-cards d-flex flex-wrap justify-content-beetwen">{items}</div>'
     ]) ?>
 
     <?php Pjax::end(); ?>

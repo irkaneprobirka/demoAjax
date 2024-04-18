@@ -34,4 +34,4 @@ $this->title = 'Регистрация';
 
 </div><!-- site-register -->
 
-<?= $this->registerJsFile('@web/js/register.js', ['depends' => [JqueryAsset::class]]) ?>
+<?= $this->registerJsFile('@web/js/qwe.js', ['depends' => [JqueryAsset::class]]) ?>

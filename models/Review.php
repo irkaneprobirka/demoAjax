@@ -32,7 +32,7 @@ class Review extends \yii\db\ActiveRecord
             [['full_name', 'phone', 'text'], 'required'],
             [['text'], 'string'],
             [['full_name', 'phone'], 'string', 'max' => 255],
-            ['full_name', 'match', 'pattern' => '/^[а-яёА-ЯЁ\s\-]+$/u'],
+            ['full_name', 'match', 'pattern' => '/^([а-яёА-ЯЁ\-]+\s){2}[а-яёА-ЯЁ\-]+$/u'],
             ['phone', 'match', 'pattern' => '/^\+7\(\d{3}\)\-\d{3}(\-\d{2}){2}$/'],
         ];
     }
