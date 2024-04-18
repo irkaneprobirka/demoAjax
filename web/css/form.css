@@ -1,0 +1,32 @@
+.is-invalid {
+    animation: inavlid ease 2 2s;
+}
+
+.invalid-feedback {
+    animation: feedback ease 1 2s;
+}
+
+@keyframes inavlid {
+
+    0%{
+        box-shadow: 0 0 3px red;
+    }
+    50%{
+        box-shadow: 0 0 10px rgb(13, 1, 1);
+    }
+    100%{
+        box-shadow: 0 0 3px red;
+    }
+    
+}
+
+@keyframes feedback {
+
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+    
+}
